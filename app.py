@@ -11,6 +11,7 @@ import os
 
 # # Load the CLIP model
 device = "cuda" if torch.cuda.is_available() else "cpu"
+@st.cache()
 def get_model():
   model, _ = clip.load("ViT-B/32", device = device)
 
